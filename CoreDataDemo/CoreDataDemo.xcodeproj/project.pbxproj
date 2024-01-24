@@ -17,6 +17,7 @@
 		ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */; };
 		ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */; };
 		ADC8D1D62B60FFB600112718 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */; };
+		ADC8D1D92B61003E00112718 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D82B61003E00112718 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADC8D1D82B61003E00112718 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				ADC8D1C52B60FA2A00112718 /* Application */,
+				ADC8D1D72B61001E00112718 /* Services */,
 				ADC8D1C92B60FAB400112718 /* Models */,
 				ADC8D1C82B60FA9600112718 /* Controllers */,
 				ADC8D1C62B60FA3400112718 /* Resources */,
@@ -117,6 +120,14 @@
 				ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ADC8D1D72B61001E00112718 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ADC8D1D82B61003E00112718 /* CoreDataManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */,
 				ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */,
 				ADC8D1D32B60FFB600112718 /* Person+CoreDataClass.swift in Sources */,
+				ADC8D1D92B61003E00112718 /* CoreDataManager.swift in Sources */,
 				ADC8D1CB2B60FB4C00112718 /* PersonViewController.swift in Sources */,
 				ADC8D1B42B60F9F800112718 /* SceneDelegate.swift in Sources */,
 			);
