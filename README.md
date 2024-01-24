@@ -1,0 +1,2 @@
+# CoreDataDemoApp
+CoreData (CRUD) - UITableView
