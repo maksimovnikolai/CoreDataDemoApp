@@ -12,6 +12,11 @@
 		ADC8D1BB2B60F9FA00112718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADC8D1BA2B60F9FA00112718 /* Assets.xcassets */; };
 		ADC8D1BE2B60F9FA00112718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC8D1BC2B60F9FA00112718 /* LaunchScreen.storyboard */; };
 		ADC8D1CB2B60FB4C00112718 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CA2B60FB4C00112718 /* PersonViewController.swift */; };
+		ADC8D1CE2B60FE4400112718 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CC2B60FE4400112718 /* CoreDataDemo.xcdatamodeld */; };
+		ADC8D1D32B60FFB600112718 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */; };
+		ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */; };
+		ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */; };
+		ADC8D1D62B60FFB600112718 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		ADC8D1BD2B60F9FA00112718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADC8D1BF2B60F9FA00112718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC8D1CA2B60FB4C00112718 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		ADC8D1CD2B60FE4400112718 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
+		ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +69,7 @@
 				ADC8D1C82B60FA9600112718 /* Controllers */,
 				ADC8D1C62B60FA3400112718 /* Resources */,
 				ADC8D1C72B60FA6600112718 /* SupportingFiles */,
+				ADC8D1CC2B60FE4400112718 /* CoreDataDemo.xcdatamodeld */,
 			);
 			path = CoreDataDemo;
 			sourceTree = "<group>";
@@ -100,6 +111,10 @@
 		ADC8D1C92B60FAB400112718 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */,
+				ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */,
+				ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */,
+				ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,7 +189,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADC8D1D62B60FFB600112718 /* Car+CoreDataProperties.swift in Sources */,
 				ADC8D1B22B60F9F800112718 /* AppDelegate.swift in Sources */,
+				ADC8D1CE2B60FE4400112718 /* CoreDataDemo.xcdatamodeld in Sources */,
+				ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */,
+				ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */,
+				ADC8D1D32B60FFB600112718 /* Person+CoreDataClass.swift in Sources */,
 				ADC8D1CB2B60FB4C00112718 /* PersonViewController.swift in Sources */,
 				ADC8D1B42B60F9F800112718 /* SceneDelegate.swift in Sources */,
 			);
@@ -382,6 +402,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ADC8D1CC2B60FE4400112718 /* CoreDataDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ADC8D1CD2B60FE4400112718 /* CoreDataDemo.xcdatamodel */,
+			);
+			currentVersion = ADC8D1CD2B60FE4400112718 /* CoreDataDemo.xcdatamodel */;
+			path = CoreDataDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ADC8D1A62B60F9F800112718 /* Project object */;
 }
