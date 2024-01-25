@@ -1,5 +1,5 @@
 //
-//  PersonViewController.swift
+//  CarsViewController.swift
 //  CoreDataDemo
 //
 //  Created by Nikolai Maksimov on 24.01.2024.
@@ -7,27 +7,30 @@
 
 import UIKit
 
-final class PersonViewController: UIViewController {
+final class CarsViewController: UIViewController {
+    
+    var person: Person!
     
     //MARK: - Private properties
     private lazy var tableView = UITableView()
-    private var persons = [Person]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var cars = [Car]()
     
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         setupTableView()
-        fetchPersons()
+        setupNavigationBar()
+        fetchCarsForCurrentPerson()
     }
 }
 
 //MARK: - Private Methods
-extension PersonViewController {
+extension CarsViewController {
+    
+    private func setupNavigationBar() {
+        title = "\(person.name ?? "") владеет:"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewCar))
+    }
     
     private func setupTableView() {
         view.addSubview(tableView)
@@ -37,31 +40,22 @@ extension PersonViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-    private func fetchPersons() {
-        persons = CoreDataManager.shared.fetchPersons()
-    }
-    
-    private func setupNavigationBar() {
-        navigationItem.title = "Автолюбители"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
-            target: self,
-            action: #selector(addNewPerson)
-        )
-    }
-    
     @objc
-    private func addNewPerson() {
-        showAlert(withTitle: "Новый владелец") {
-            let newPerson = CoreDataManager.shared.createPerson(name: $0)
-            self.persons.append(newPerson)
+    private func addNewCar() {
+        showAlert(withTitle: "Добавить авто") { brandTitle in
+            let car = CoreDataManager.shared.createCar(for: self.person, brand: brandTitle)
+            self.cars.append(car)
+            self.tableView.reloadData()
         }
     }
     
-    private func updatePerson(_ person: Person, at indexPath: IndexPath ) {
-        showAlert(withTitle: "Изменить", currentText: person.name) { name in
-            person.name = name
+    private func fetchCarsForCurrentPerson() {
+        cars = person.cars?.allObjects as! [Car]
+    }
+    
+    private func updateCarModel(_ car: Car, at indexPath: IndexPath) {
+        showAlert(withTitle: "Изменить") { brandTitle in
+            car.brand = brandTitle
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
             CoreDataManager.shared.update()
         }
@@ -79,7 +73,7 @@ extension PersonViewController {
         alert.addAction(cancel)
         alert.addAction(save)
         alert.addTextField { tf in
-            tf.placeholder = "Введите имя"
+            tf.placeholder = "BMW, Mercedes, Audi..."
             tf.text = currentText
         }
         present(alert, animated: true)
@@ -87,32 +81,32 @@ extension PersonViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension PersonViewController: UITableViewDataSource {
+extension CarsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        persons.count
+        person.cars?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let person = persons[indexPath.row]
+        
+        let car = cars[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
-        content.text = person.name
-        
+        content.text = car.brand
         cell.contentConfiguration = content
         return cell
     }
 }
 
 //MARK: - UITableViewDelegate
-extension PersonViewController: UITableViewDelegate {
+extension CarsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
+
         let action = UIContextualAction(style: .normal, title: "Обновить") { _, _, isDone in
-            let person = self.persons[indexPath.row]
-            self.updatePerson(person, at: indexPath)
+            let car = self.cars[indexPath.row]
+            self.updateCarModel(car, at: indexPath)
             isDone(true)
         }
         return UISwipeActionsConfiguration(actions: [action])
@@ -120,17 +114,11 @@ extension PersonViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, isDone in
-            CoreDataManager.shared.delete(self.persons[indexPath.row])
-            self.persons.remove(at: indexPath.row)
+            CoreDataManager.shared.delete(self.cars[indexPath.row])
+            self.cars.remove(at: indexPath.row)
+            tableView.reloadData()
             isDone(true)
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let carsVC = CarsViewController()
-        let person = persons[indexPath.row]
-        carsVC.person = person
-        navigationController?.pushViewController(carsVC, animated: true)
     }
 }

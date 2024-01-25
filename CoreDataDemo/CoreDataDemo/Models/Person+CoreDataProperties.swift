@@ -17,7 +17,24 @@ extension Person {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var cars: Car?
+    @NSManaged public var cars: NSSet?
+
+}
+
+// MARK: Generated accessors for cars
+extension Person {
+
+    @objc(addCarsObject:)
+    @NSManaged public func addToCars(_ value: Car)
+
+    @objc(removeCarsObject:)
+    @NSManaged public func removeFromCars(_ value: Car)
+
+    @objc(addCars:)
+    @NSManaged public func addToCars(_ values: NSSet)
+
+    @objc(removeCars:)
+    @NSManaged public func removeFromCars(_ values: NSSet)
 
 }
 

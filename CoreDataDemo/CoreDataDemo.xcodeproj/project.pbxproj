@@ -13,11 +13,12 @@
 		ADC8D1BE2B60F9FA00112718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC8D1BC2B60F9FA00112718 /* LaunchScreen.storyboard */; };
 		ADC8D1CB2B60FB4C00112718 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CA2B60FB4C00112718 /* PersonViewController.swift */; };
 		ADC8D1CE2B60FE4400112718 /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CC2B60FE4400112718 /* CoreDataDemo.xcdatamodeld */; };
-		ADC8D1D32B60FFB600112718 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */; };
-		ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */; };
-		ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */; };
-		ADC8D1D62B60FFB600112718 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */; };
 		ADC8D1D92B61003E00112718 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1D82B61003E00112718 /* CoreDataManager.swift */; };
+		ADC8D1DB2B61458C00112718 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1DA2B61458C00112718 /* CarsViewController.swift */; };
+		ADC8D1E02B614A2100112718 /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1DC2B614A2100112718 /* Car+CoreDataClass.swift */; };
+		ADC8D1E12B614A2100112718 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1DD2B614A2100112718 /* Car+CoreDataProperties.swift */; };
+		ADC8D1E22B614A2100112718 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1DE2B614A2100112718 /* Person+CoreDataClass.swift */; };
+		ADC8D1E32B614A2100112718 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC8D1DF2B614A2100112718 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +30,12 @@
 		ADC8D1BF2B60F9FA00112718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC8D1CA2B60FB4C00112718 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		ADC8D1CD2B60FE4400112718 /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
-		ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ADC8D1D82B61003E00112718 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		ADC8D1DA2B61458C00112718 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
+		ADC8D1DC2B614A2100112718 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADC8D1DD2B614A2100112718 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ADC8D1DE2B614A2100112718 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ADC8D1DF2B614A2100112718 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				ADC8D1CA2B60FB4C00112718 /* PersonViewController.swift */,
+				ADC8D1DA2B61458C00112718 /* CarsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,10 +117,10 @@
 		ADC8D1C92B60FAB400112718 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ADC8D1CF2B60FFB600112718 /* Person+CoreDataClass.swift */,
-				ADC8D1D02B60FFB600112718 /* Person+CoreDataProperties.swift */,
-				ADC8D1D12B60FFB600112718 /* Car+CoreDataClass.swift */,
-				ADC8D1D22B60FFB600112718 /* Car+CoreDataProperties.swift */,
+				ADC8D1DC2B614A2100112718 /* Car+CoreDataClass.swift */,
+				ADC8D1DD2B614A2100112718 /* Car+CoreDataProperties.swift */,
+				ADC8D1DE2B614A2100112718 /* Person+CoreDataClass.swift */,
+				ADC8D1DF2B614A2100112718 /* Person+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,13 +203,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADC8D1D62B60FFB600112718 /* Car+CoreDataProperties.swift in Sources */,
+				ADC8D1E12B614A2100112718 /* Car+CoreDataProperties.swift in Sources */,
 				ADC8D1B22B60F9F800112718 /* AppDelegate.swift in Sources */,
 				ADC8D1CE2B60FE4400112718 /* CoreDataDemo.xcdatamodeld in Sources */,
-				ADC8D1D42B60FFB600112718 /* Person+CoreDataProperties.swift in Sources */,
-				ADC8D1D52B60FFB600112718 /* Car+CoreDataClass.swift in Sources */,
-				ADC8D1D32B60FFB600112718 /* Person+CoreDataClass.swift in Sources */,
 				ADC8D1D92B61003E00112718 /* CoreDataManager.swift in Sources */,
+				ADC8D1E02B614A2100112718 /* Car+CoreDataClass.swift in Sources */,
+				ADC8D1E22B614A2100112718 /* Person+CoreDataClass.swift in Sources */,
+				ADC8D1E32B614A2100112718 /* Person+CoreDataProperties.swift in Sources */,
+				ADC8D1DB2B61458C00112718 /* CarsViewController.swift in Sources */,
 				ADC8D1CB2B60FB4C00112718 /* PersonViewController.swift in Sources */,
 				ADC8D1B42B60F9F800112718 /* SceneDelegate.swift in Sources */,
 			);

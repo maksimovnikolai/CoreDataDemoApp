@@ -6,6 +6,6 @@
     </entity>
     <entity name="Person" representedClassName=".Person" syncable="YES">
         <attribute name="name" attributeType="String"/>
-        <relationship name="cars" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="person" inverseEntity="Car"/>
+        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Car" inverseName="person" inverseEntity="Car"/>
     </entity>
 </model>

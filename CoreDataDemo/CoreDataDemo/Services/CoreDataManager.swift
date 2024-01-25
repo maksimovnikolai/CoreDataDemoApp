@@ -32,9 +32,6 @@ final class CoreDataManager {
     private init() {
         viewContext = persistentContainer.viewContext
     }
-    
-
-
 }
 
 // MARK: - Person - CRUD
@@ -82,6 +79,34 @@ extension CoreDataManager {
             print(error)
         }
     }
+}
+
+// MARK: - Car - CRUD
+extension CoreDataManager {
+    
+    // MARK: Create CAR
+    func createCar(for person: Person, brand: String) -> Car {
+        let car = Car(entity: Car.entity(), insertInto: viewContext)
+        car.brand = brand
+        car.person = person
+        
+        do {
+            try viewContext.save()
+        } catch {
+            print(error)
+        }
+        return car
+    }
+    
+    // MARK: Fetch Cars
+    func fetchCars() -> [Car] {
+        do {
+            cars = try viewContext.fetch(Car.fetchRequest())
+        } catch {
+            print(error)
+        }
+        return cars
+    }
     
     // MARK: Core Data Saving support
     func saveContext () {
@@ -95,9 +120,4 @@ extension CoreDataManager {
             }
         }
     }
-}
-
-// MARK: - Car - CRUD
-private extension CoreDataManager {
-    
 }
