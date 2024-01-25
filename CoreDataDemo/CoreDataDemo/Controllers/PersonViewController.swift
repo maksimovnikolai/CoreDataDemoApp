@@ -43,7 +43,6 @@ extension PersonViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Автолюбители"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
@@ -128,6 +127,7 @@ extension PersonViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let carsVC = CarsViewController()
         let person = persons[indexPath.row]
         carsVC.person = person
